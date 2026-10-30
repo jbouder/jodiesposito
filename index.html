@@ -517,11 +517,10 @@
     var t=document.getElementById('email').textContent.trim();
     function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);status.textContent='Selected. Press Ctrl+C or ⌘C to copy.'}
     function done(){
-      status.textContent='Email copied.';status.classList.add('sr');
+      status.innerHTML='<span class="sr">Email copied.</span>';
       copy.classList.add('copied');email.classList.remove('flash');void email.offsetWidth;email.classList.add('flash');
       clearTimeout(copy._t);copy._t=setTimeout(function(){copy.classList.remove('copied')},2200);
     }
-    status.classList.remove('sr');
     if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,sel)}else{sel()}
   });
   var email=document.getElementById('email');
