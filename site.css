@@ -124,10 +124,10 @@ img{display:block;max-width:100%}
 @view-transition{navigation:auto}
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
 .site-head{view-transition-name:site-head}
-::view-transition-old(root){animation:vt-out .2s cubic-bezier(.4,0,1,1) both}
-::view-transition-new(root){animation:vt-in .42s var(--ease-out) .08s both}
-@keyframes vt-out{to{opacity:0;transform:translateY(-6px)}}
-@keyframes vt-in{from{opacity:0;transform:translateY(14px)}}
+::view-transition-old(root){animation:vt-out .28s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vt-in .6s var(--ease-out) .14s both}
+@keyframes vt-out{to{opacity:0;transform:translateY(-12px)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(32px)}}
 
 /* Reveal on scroll: motion.js adds .rv to content below the fold, then .in as it enters */
 .rv{opacity:0;transform:translateY(18px)}
