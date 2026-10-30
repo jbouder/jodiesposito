@@ -470,7 +470,7 @@
     <span class="label">Get in touch</span>
     <div class="contact-line">
       <span class="email" id="email">jodi.esposito@gmail.com</span>
-      <button type="button" class="pill" id="copy-email">Copy email</button>
+      <button type="button" class="pill copy-btn" id="copy-email"><span class="cb-idle">Copy email</span><span class="cb-done" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3L13 4.5"/></svg>Copied</span></button>
     </div>
     <span id="copy-status" aria-live="polite"></span>
     <div class="contact-line">
@@ -516,10 +516,18 @@
   copy.addEventListener('click',function(){
     var t=document.getElementById('email').textContent.trim();
     function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);status.textContent='Selected. Press Ctrl+C or ⌘C to copy.'}
-    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){status.textContent='Email copied.'},sel)}else{sel()}
+    function done(){
+      status.innerHTML='<span class="sr">Email copied.</span>';
+      copy.classList.add('copied');email.classList.remove('flash');void email.offsetWidth;email.classList.add('flash');
+      clearTimeout(copy._t);copy._t=setTimeout(function(){copy.classList.remove('copied')},2200);
+    }
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,sel)}else{sel()}
   });
+  var email=document.getElementById('email');
+  email.addEventListener('animationend',function(){email.classList.remove('flash')});
 })();
 </script>
 
+<script src="motion.js"></script>
 </body>
 </html>
