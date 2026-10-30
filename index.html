@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jodi Esposito Portfolio</title>
+<meta name="description" content="Jodi Esposito, digital marketing and communications leader for associations and mission-driven organizations. Case studies in SEO, AI search, social, video, email, events, and analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;padding-block:24px 72px;align-items:stretch}
+.hero-text{display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-width:0}
+.hero h1{font-size:clamp(64px,10.5vw,150px);line-height:.86;text-transform:uppercase;letter-spacing:-.015em}
+.hero h1 span{display:block}
+.hero h1 span+span{padding-left:.42em}
+.hero .thesis{font-family:var(--display);font-size:clamp(24px,2.6vw,34px);line-height:1.18;max-width:20ch}
+.hero .role{font-size:15px;letter-spacing:.08em;text-transform:uppercase;line-height:1.5}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.portrait{background:var(--chart);border-radius:4px;display:grid;place-items:center;padding:48px 24px;position:relative;overflow:hidden;min-height:440px}
+.portrait::before{content:"";position:absolute;width:118%;aspect-ratio:1;max-width:none;background:var(--lav);
+  clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%);top:50%;left:50%;transform:translate(-50%,-50%) rotate(22.5deg)}
+.portrait img{position:relative;width:min(340px,80%);height:auto}
+.portrait .cap{position:absolute;left:20px;bottom:16px;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:#1F3A2B}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.portrait{min-height:340px}}
+
+/* Proof strip */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--rule);margin-bottom:96px}
+.proof div{padding:24px 24px 8px 0;display:grid;gap:10px;align-content:start}
+.proof div+div{padding-left:24px;border-left:1px solid var(--rule-soft)}
+.proof .num{font-family:var(--display);font-size:clamp(48px,6vw,80px);line-height:.95;font-variant-numeric:tabular-nums}
+.proof p{font-size:15.5px;color:var(--ink-soft);max-width:26ch}
+@media (max-width:700px){.proof{grid-template-columns:1fr}.proof div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule-soft)}}
+
+/* Work */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 36px}
+.filters button{font:500 14px/1 var(--body);padding:10px 16px;border-radius:999px;border:1px solid var(--rule-soft);background:transparent;color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 28px}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{display:grid;gap:12px;align-content:start;min-width:0}
+.card .vis{aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--paper-2);position:relative;max-width:100%}
+.card .vis img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s}
+.card:hover .vis img{transform:scale(1.03)}
+.card .vis.fig{display:flex;flex-direction:column;justify-content:flex-end;padding:22px}
+.card .vis.fig .big{font-family:var(--display);font-size:clamp(46px,5vw,64px);line-height:1;font-variant-numeric:tabular-nums}
+.card .vis.fig small{font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-top:8px;color:#1F3A2B}
+.vis.lav{background:var(--lav)}
+.vis.chart{background:var(--chart)}
+.vis.lav .big,.vis.chart .big{color:#1F3A2B}
+.vis.lav small,.vis.chart small{color:#1F3A2B}
+.card .meta{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.card h3{font-size:clamp(23px,2.1vw,27px);line-height:1.12}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.card .result{font-size:15.5px;line-height:1.5}
+.card .go{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1.5px solid var(--ink);justify-self:start;padding-bottom:2px}
+.card .soon{font-size:13px;color:var(--ink-soft)}
+.crm svg{width:100%;height:100%}
+
+/* Testimonials */
+.quotes-home{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.quotes-home figure{margin:0;display:grid;gap:18px;align-content:start}
+.quotes-home blockquote{margin:0;font-family:var(--display);font-size:clamp(21px,2.1vw,26px);line-height:1.32}
+.quotes-home figcaption{font-size:15px;color:var(--ink-soft);display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--rule-soft)}
+.quotes-home figcaption b{font-weight:600;color:var(--ink)}
+@media (max-width:820px){.quotes-home{grid-template-columns:1fr}}
+
+/* Community */
+.comm{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:start}
+.comm-num{display:grid;gap:8px;padding-top:14px;border-top:1.5px solid var(--rule)}
+.comm-num .num{font-family:var(--display);font-size:clamp(48px,6vw,80px);line-height:.95}
+.comm-num p{font-size:15.5px;color:var(--ink-soft);max-width:28ch}
+.comm-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--rule)}
+.comm-list li{padding:13px 0 13px 18px;border-bottom:1px solid var(--rule-soft);position:relative;font-size:17px}
+.comm-list li::before{content:"";position:absolute;left:0;top:1.3em;width:6px;height:6px;border-radius:50%;background:var(--persimmon)}
+@media (max-width:760px){.comm{grid-template-columns:1fr}}
+.cakes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cakes figure{margin:0}
+.cakes img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:4px}
+.cakes .fine{grid-column:1/-1}
+@media (max-width:700px){.cakes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory}.cakes figure{flex:0 0 42%;scroll-snap-align:start}.cakes .fine{display:none}}
+
+/* Earned media */
+.press{display:grid;border-top:1px solid var(--rule-soft)}
+.press a{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) auto;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--rule-soft);text-decoration:none;align-items:baseline}
+.press .outlet{font-family:var(--display);font-size:26px}
+.press .hl{font-size:17px}
+.press .when{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.press a:hover .hl{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:700px){.press a{grid-template-columns:1fr}}
+
+/* Writing */
+.writing{display:grid;gap:0}
+.writing article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px 40px;padding:30px 0;border-top:1px solid var(--rule-soft)}
+.writing article:first-child{border-top:0;padding-top:4px}
+.writing h3{font-size:clamp(24px,2.4vw,30px);line-height:1.12;margin-top:8px}
+.writing blockquote{margin:0;font-family:var(--display);font-size:20px;line-height:1.4;color:var(--ink-soft)}
+.writing .skill{font-size:15px;margin-top:12px}
+.writing .links{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:baseline;margin-top:14px}
+.writing a.orig{font-size:14px;color:var(--ink-soft)}
+.writing a.go{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-bottom:1.5px solid var(--ink)}
+@media (max-width:760px){.writing article{grid-template-columns:1fr}}
+
+/* Design gallery */
+.carousel{display:grid;gap:18px;min-width:0}
+.c-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+.c-track::-webkit-scrollbar{display:none}
+.c-slide{flex:0 0 min(82%,520px);scroll-snap-align:start;margin:0;display:grid;gap:12px;align-content:start}
+.c-slide .frame{height:clamp(300px,40vw,460px);background:var(--paper-2);border-radius:4px;display:flex;align-items:center;justify-content:center;padding:22px}
+.c-slide img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:2px}
+.c-slide figcaption{font-size:14.5px;line-height:1.45}
+.c-slide figcaption b{font-weight:600;display:block}
+.c-ctrl{display:flex;align-items:center;gap:12px}
+.c-btn{width:48px;height:48px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-size:20px;cursor:pointer;transition:background .2s,color .2s}
+.c-btn:hover{background:var(--ink);color:var(--paper)}
+.c-btn:disabled{opacity:.3;cursor:default;background:transparent;color:var(--ink)}
+.c-count{font-size:14px;letter-spacing:.06em;color:var(--ink-soft);font-variant-numeric:tabular-nums;margin-left:6px}
+
+/* Timeline */
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:140px minmax(0,1fr);gap:8px 32px;padding:20px 0;border-top:1px solid var(--rule-soft)}
+.timeline li:first-child{border-top:0;padding-top:4px}
+.timeline .yrs{font-variant-numeric:tabular-nums;font-size:15px;letter-spacing:.04em;color:var(--ink-soft);padding-top:4px}
+.timeline .t{font-family:var(--display);font-size:24px;line-height:1.15}
+.timeline .o{font-size:16px}
+.timeline .d{font-size:15px;color:var(--ink-soft);margin-top:4px;max-width:62ch}
+@media (max-width:560px){.timeline li{grid-template-columns:1fr}}
+
+/* About */
+.statement{font-family:var(--display);font-size:clamp(26px,3.4vw,42px);line-height:1.18;letter-spacing:-.01em;max-width:30ch}
+.about-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px}
+.about-cols h3{font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px}
+.about-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:16px;line-height:1.4}
+.about-cols li{padding-left:14px;position:relative}
+.about-cols li::before{content:"";position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--persimmon)}
+.about-cols p{font-size:16px}
+@media (max-width:860px){.about-cols{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.about-cols{grid-template-columns:1fr}}
+
+/* Contact */
+.contact-line{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.contact-line .email{font-family:var(--display);font-size:clamp(26px,4vw,44px);user-select:all;word-break:break-all}
+#copy-status{font-size:14px;min-height:1.2em}
+</style>
+</head>
+<body>
+
+<div class="gutter">
+<div class="wrap">
+
+  <header class="site-head">
+    <a class="mark" href="#top">JODI ESPOSITO</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="pill" href="#contact">Get in touch</a>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-text">
+      <h1><span>Jodi</span><span>Esposito</span></h1>
+      <p class="thesis">I make mission-driven organizations easier to find, understand, and support.</p>
+      <div style="display:grid;gap:20px">
+        <p class="role">Digital marketing &amp; communications leader<br>Associations · Nonprofits · Advocacy</p>
+        <div class="ctas">
+          <a class="pill solid" href="#work">See the work</a>
+          <a class="pill" href="resume.html">Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="images/headshot.png" alt="Portrait of Jodi Esposito" width="400" height="400">
+      <span class="cap">Washington, DC Metro Area</span>
+    </div>
+  </section>
+
+  <span class="label" style="display:block;margin-bottom:14px">Career highlights</span>
+  <div class="proof" aria-label="Career highlights">
+    <div><span class="num">3.2M</span><p>social views and impressions in one quarter at RIF, up 150%</p></div>
+    <div><span class="num">+9,000%</span><p>organic search traffic in three years at the U.S. Chamber Institute for Legal Reform</p></div>
+    <div><span class="num">+104%</span><p>growth in creator membership at the Copyright Alliance</p></div>
+  </div>
+
+  <section class="row" id="work">
+    <span class="label">Selected work</span>
+    <div style="min-width:0">
+      <h2 class="sec-title">Case studies</h2>
+      <p class="sec-lede">Ten projects across four organizations. Each one starts with the result.</p>
+
+      <div class="filters" role="group" aria-label="Filter case studies by skill">
+        <button type="button" data-f="all" aria-pressed="true">All</button>
+        <button type="button" data-f="search" aria-pressed="false">Search &amp; AI</button>
+        <button type="button" data-f="social" aria-pressed="false">Social &amp; video</button>
+        <button type="button" data-f="web" aria-pressed="false">Web &amp; conversion</button>
+        <button type="button" data-f="data" aria-pressed="false">Data &amp; operations</button>
+        <button type="button" data-f="strategy" aria-pressed="false">Strategy &amp; events</button>
+      </div>
+
+      <div class="cards">
+
+        <article class="card" data-tags="search">
+          <div class="vis fig lav"><span class="big">20 → 31</span><small>AI visibility score, RIF.org</small></div>
+          <span class="meta">Reading Is Fundamental · 2026</span>
+          <h3><a href="ai-answers.html">Getting found in AI answers</a></h3>
+          <p class="result">Raised RIF's AI visibility score 11 points in one quarter. ChatGPT now sends measurable traffic to RIF's teaching resources.</p>
+          <a class="go" href="ai-answers.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="search">
+          <div class="vis"><img src="images/web-ilr-research.jpg" alt="Institute for Legal Reform research page" loading="lazy"></div>
+          <span class="meta">U.S. Chamber ILR · 2021–2024</span>
+          <h3><a href="ilr-search.html">Turning legal research into search traffic</a></h3>
+          <p class="result">+9,000% organic traffic and +1,500% overall by turning PDF research into pages people could find.</p>
+          <a class="go" href="ilr-search.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="social">
+          <div class="vis"><img src="images/social-instagram.jpg" alt="Instagram carousel: 7 Reasons Reading Is Good for You" loading="lazy"></div>
+          <span class="meta">Reading Is Fundamental · 2026</span>
+          <h3><a href="social-reset.html">A data-led social media reset</a></h3>
+          <p class="result">3.2M views and impressions, up 150%, and engagement up 110% after rebuilding the content calendar around what audiences responded to.</p>
+          <a class="go" href="social-reset.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="social web">
+          <div class="vis"><img src="images/video-ask-karly.jpg" alt="Ask Karly TikTok episode: Do audiobooks count as reading?" loading="lazy" style="object-position:center 20%"></div>
+          <span class="meta">Reading Is Fundamental · 2026</span>
+          <h3><a href="ask-karly.html">Ask Karly &amp; Reading Fundamentals</a></h3>
+          <p class="result">Two in-house video series with a $0 budget. Ask Karly earns 7.7% TikTok engagement against a 5.8% account average.</p>
+          <a class="go" href="ask-karly.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="search web">
+          <div class="vis"><img src="images/web-skybrary-free-books.jpg" alt="Skybrary Free Books page" loading="lazy"></div>
+          <span class="meta">Skybrary · Reading Is Fundamental · 2026</span>
+          <h3><a href="free-books.html">Free Books: an SEO turnaround that drove signups</a></h3>
+          <p class="result">Average Google position moved from 40 to 12, and signup clicks from the page rose 376%.</p>
+          <a class="go" href="free-books.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="social">
+          <div class="vis"><img src="images/social-linkedin.jpg" alt="The Joyful Reader newsletter edition on LinkedIn" loading="lazy"></div>
+          <span class="meta">Reading Is Fundamental · 2026</span>
+          <h3><a href="joyful-reader.html">Launching The Joyful Reader newsletter</a></h3>
+          <p class="result">2,514 subscribers in 14 weeks with no paid promotion; 43% are senior-level or above.</p>
+          <a class="go" href="joyful-reader.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="data web">
+          <div class="vis fig lav"><span class="big">−32%</span><small>Ad Grant cost per conversion</small></div>
+          <span class="meta">Reading Is Fundamental · 2026</span>
+          <h3><a href="measurement.html">Measuring what matters</a></h3>
+          <p class="result">Built the dashboards and reports leadership uses, and cut Google Ad Grant cost per conversion by a third as conversions rose 45%.</p>
+          <a class="go" href="measurement.html">Read the case study →</a>
+        </article>
+
+        <article class="card crm" data-tags="data">
+          <div class="vis" style="background:var(--lav-soft)">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Diagram: one manager linked to three songwriters in the CRM">
+              <g fill="none" stroke="var(--ink)" stroke-width="1.5">
+                <path d="M200 110 C200 160 90 150 90 200"/><path d="M200 110 L200 200"/><path d="M200 110 C200 160 310 150 310 200"/>
+              </g>
+              <rect x="130" y="62" width="140" height="48" rx="24" fill="var(--ink)"/>
+              <text x="200" y="91" text-anchor="middle" fill="var(--paper)" font-family="Hanken Grotesk, Arial, sans-serif" font-size="15" font-weight="600">Manager</text>
+              <g font-family="Hanken Grotesk, Arial, sans-serif" font-size="14" text-anchor="middle" fill="var(--ink)">
+                <rect x="40" y="200" width="100" height="40" rx="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/><text x="90" y="225">Songwriter A</text>
+                <rect x="150" y="200" width="100" height="40" rx="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/><text x="200" y="225">Songwriter B</text>
+                <rect x="260" y="200" width="100" height="40" rx="20" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/><text x="310" y="225">Songwriter C</text>
+              </g>
+              <text x="200" y="40" text-anchor="middle" font-family="Hanken Grotesk, Arial, sans-serif" font-size="12" letter-spacing="1.2" fill="var(--ink)">ONE EMAIL · MANY RELATIONSHIPS</text>
+            </svg>
+          </div>
+          <span class="meta">National Music Publishers' Association · 2024–2025</span>
+          <h3><a href="nmpa-crm.html">A CRM built for how the music industry works</a></h3>
+          <p class="result">Replaced Mailchimp with a custom Salesforce CRM in three months, so one manager can get a personalized invite for each songwriter they represent.</p>
+          <a class="go" href="nmpa-crm.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="strategy">
+          <div class="vis"><img src="images/summit-stage.jpg" alt="Speaker on stage at ILR Summit 2024" loading="lazy" style="object-position:center"></div>
+          <span class="meta">U.S. Chamber ILR · 2021–2024</span>
+          <h3><a href="ilr-summit.html">ILR Summit 2024</a></h3>
+          <p class="result">Led the invite-only Summit end to end: nearly 200 registrants, 11 sponsors, the run of show, and every piece of creative in the room.</p>
+          <a class="go" href="ilr-summit.html">Read the case study →</a>
+        </article>
+
+        <article class="card" data-tags="strategy">
+          <div class="vis"><img src="images/web-copyright-alliance.jpg" alt="Copyright Alliance website homepage" loading="lazy"></div>
+          <span class="meta">Copyright Alliance · 2016–2021</span>
+          <h3><a href="copyright-alliance.html">Building a marketing function for a small nonprofit</a></h3>
+          <p class="result">Grew creator membership 104% and relaunched the website without losing search traffic.</p>
+          <a class="go" href="copyright-alliance.html">Read the case study →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="praise">
+    <span class="label">What colleagues say</span>
+    <div class="quotes-home">
+      <figure>
+        <blockquote>“Jodi brought both strategic thinking and hands-on execution to our marketing and membership efforts. She helped us build a more cohesive approach that strengthened our digital presence, grew our creator community, and made a meaningful impact despite the realities of working with a small nonprofit team.”</blockquote>
+        <figcaption><b>Eileen Bramlet</b>COO and SVP, Communications, Copyright Alliance</figcaption>
+      </figure>
+      <figure>
+        <blockquote>“Jodi has a rare ability to connect big-picture strategy with the day-to-day work needed to deliver results. At ILR, she transformed our approach to digital content and SEO, helping make our research more accessible and discoverable while driving significant growth in our online audience.”</blockquote>
+        <figcaption><b>Shira Rawlinson</b>VP, Communications, U.S. Chamber Institute for Legal Reform</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="row" id="press">
+    <span class="label">Earned media</span>
+    <div style="min-width:0">
+      <h2 class="sec-title">Picked up by the press</h2>
+      <p class="sec-lede" style="margin-bottom:28px">Blog posts I wrote for the U.S. Chamber Institute for Legal Reform were cited in national legal coverage.</p>
+      <div class="press">
+        <a href="https://www.reuters.com/legal/legalindustry/lawyer-sues-morgan-morgan-over-firms-deceptive-ad-practices-2024-07-18/" target="_blank" rel="noopener">
+          <span class="outlet">Reuters</span><span class="hl">Lawyer sues Morgan &amp; Morgan over firm's deceptive ad practices</span><span class="when">July 2024 ↗</span>
+        </a>
+        <a href="https://legalnewsline.com/stories/664448916-u-s-chamber-of-commerce-s-ilr-says-nfl-case-ruling-underscores-importance-of-federal-rule-702" target="_blank" rel="noopener">
+          <span class="outlet">Legal Newsline</span><span class="hl">U.S. Chamber of Commerce's ILR says NFL case ruling underscores importance of Federal Rule 702</span><span class="when">Sept 2024 ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="writing">
+    <span class="label">Writing</span>
+    <div class="writing">
+      <article>
+        <div><span class="label muted">Educational content · RIF</span><h3>Children's Literacy in Crisis: What America Must Do to Turn the Page</h3></div>
+        <div>
+          <blockquote>“When comparing state reading scores for fourth-grade public school students in 2022 with those from 2019, 30 states scored lower, no states scored higher.”</blockquote>
+          <p class="skill">Turns national data into a clear case for action, written to rank in search and move readers to get involved.</p>
+          <span class="links"><a class="go" href="writing-literacy-crisis.html">Read the full piece</a><a class="orig" href="https://www.rif.org/blogs/childrens-literacy-crisis-what-america-must-do-turn-page" target="_blank" rel="noopener">Original on rif.org ↗</a></span>
+        </div>
+      </article>
+      <article>
+        <div><span class="label muted">Policy writing · ILR</span><h3>The Truth About Trial Lawyer Ads</h3></div>
+        <div>
+          <blockquote>“On your next road trip, instead of playing the license plate game try out a new one: count the number of lawyer billboards you pass.”</blockquote>
+          <p class="skill">Makes a research-backed policy argument readable for a general audience, from the first line.</p>
+          <span class="links"><a class="go" href="writing-trial-lawyer-ads.html">Read the full piece</a><a class="orig" href="https://instituteforlegalreform.com/blog/the-truth-about-trial-lawyer-ads/" target="_blank" rel="noopener">Original on ILR ↗</a></span>
+        </div>
+      </article>
+      <article>
+        <div><span class="label muted">Community voice · Copyright Alliance</span><h3>Thank You Creators for Getting Us Through Difficult Times</h3></div>
+        <div>
+          <blockquote>“The creative community is united together and it shows. Thank you for being there for us when the world needs you most.”</blockquote>
+          <p class="skill">A personal, first-person letter to the creator community, written in the first weeks of the pandemic.</p>
+          <span class="links"><a class="go" href="writing-thank-you-creators.html">Read the full piece</a><a class="orig" href="https://copyrightalliance.org/thank-you-creators-for-getting-us-through-difficult-times/" target="_blank" rel="noopener">Original on copyrightalliance.org ↗</a></span>
+        </div>
+      </article>
+      <article>
+        <div><span class="label muted">Community feature · Vienna Living</span><h3>10,000 Cakes and Counting</h3></div>
+        <div>
+          <blockquote>“The 10,000th cake is far more than just a number. It represents 10,000 birthdays made brighter, 10,000 children who felt special, and 10,000 memories cherished by families.”</blockquote>
+          <p class="skill">A magazine feature for a local audience, written to celebrate a milestone and recruit new volunteers.</p>
+          <span class="links"><a class="go" href="writing-cake4kids.html">Read the full piece</a></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="row" id="design">
+    <span class="label">Design</span>
+    <div style="min-width:0">
+      <h2 class="sec-title" style="margin-bottom:28px">Design portfolio</h2>
+      <div class="carousel" aria-roledescription="carousel" aria-label="Design portfolio">
+        <div class="c-track" id="c-track" tabindex="0">
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="1 of 10"><div class="frame"><img src="images/design-songs-guitar.jpg" alt="Purple argyle acoustic guitar with the SONGS Foundation 10th anniversary logo" loading="lazy"></div><figcaption><b>SONGS Foundation 10th anniversary guitar</b>NMPA · 2024</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="2 of 10"><div class="frame"><img src="images/design-mma-infographic.jpg" alt="Infographic: What you need to know about the Music Modernization Act" loading="lazy"></div><figcaption><b>Music Modernization Act explainer</b>Copyright Alliance</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="3 of 10"><div class="frame"><img src="images/design-read-with-rif.jpg" alt="Read with RIF book club post featuring Sama Crushes the Code" loading="lazy"></div><figcaption><b>Read with RIF book club post</b>Reading Is Fundamental · 2026</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="4 of 10"><div class="frame"><img src="images/summit-banner.jpg" alt="Summit 2024 pull-up banner: Law, Policy, Politics" loading="lazy"></div><figcaption><b>Summit 2024 event identity</b>U.S. Chamber ILR · 2024</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="5 of 10"><div class="frame"><img src="images/design-nmpa-gold-platinum-sign.jpg" alt="Purple Gold &amp; Platinum Club welcome sign on an easel at an event entrance" loading="lazy"></div><figcaption><b>Gold &amp; Platinum Club event signage</b>NMPA</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="6 of 10"><div class="frame"><img src="images/design-copyright-alliance-booth.jpg" alt="Copyright Alliance exhibit booth with backdrop, branded tablecloth, and pull-up banner" loading="lazy"></div><figcaption><b>Exhibit booth: backdrop, tablecloth, and banner</b>Copyright Alliance</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="7 of 10"><div class="frame"><img src="images/design-capybara-reading-tip.jpg" alt="Instagram graphic: Capybara's back-to-school reading tip, give reading its own spot on the schedule" loading="lazy"></div><figcaption><b>Capybara reading tip, a top-performing social series</b>Reading Is Fundamental · 2026</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="8 of 10"><div class="frame"><img src="images/design-ny-copyright-facts.jpg" alt="Infographic: Copyright facts for New York" loading="lazy"></div><figcaption><b>State copyright facts series</b>Copyright Alliance</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="9 of 10"><div class="frame"><img src="images/design-tort-costs-report.jpg" alt="Report cover: Tort Costs for Small Businesses" loading="lazy"></div><figcaption><b>Research report cover</b>U.S. Chamber ILR</figcaption></figure>
+          <figure class="c-slide" role="group" aria-roledescription="slide" aria-label="10 of 10"><div class="frame"><img src="images/design-tplf-infographic.jpg" alt="Infographic: What is third party litigation funding, true or false" loading="lazy"></div><figcaption><b>Third-party litigation funding explainer</b>U.S. Chamber ILR</figcaption></figure>
+        </div>
+        <div class="c-ctrl">
+          <button type="button" class="c-btn" id="c-prev" aria-label="Previous design">←</button>
+          <button type="button" class="c-btn" id="c-next" aria-label="Next design">→</button>
+          <span class="c-count" id="c-count" aria-live="polite">1 / 10</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="career">
+    <span class="label">Career</span>
+    <ol class="timeline">
+      <li><span class="yrs">2025 – now</span><div><p class="t">Director, Digital Marketing</p><p class="o">Reading Is Fundamental</p><p class="d">Digital strategy, content, search, AI visibility, email, and analytics across RIF's web properties and the Skybrary reading app.</p></div></li>
+      <li><span class="yrs">2024 – 2025</span><div><p class="t">Vice President, External Affairs</p><p class="o">National Music Publishers' Association</p><p class="d">Member communications, digital campaigns, and a custom Salesforce CRM; communications for the SONGS Foundation.</p></div></li>
+      <li><span class="yrs">2021 – 2024</span><div><p class="t">Senior Director, Business Engagement and Growth</p><p class="o">U.S. Chamber Institute for Legal Reform</p><p class="d">SEO and content strategy, the annual Summit, brand rollout, and website redesign.</p></div></li>
+      <li><span class="yrs">2016 – 2021</span><div><p class="t">Director, Marketing and Membership</p><p class="o">Copyright Alliance</p><p class="d">Integrated marketing, membership growth, a website relaunch, and educational events.</p></div></li>
+      <li><span class="yrs">2009 – 2016</span><div><p class="t">Digital Artist and Content Approvals</p><p class="o">CustomInk</p><p class="d">Customer design in Illustrator and Photoshop, copyright review, and team training.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="row" id="community">
+    <span class="label">Community</span>
+    <div style="min-width:0;display:grid;gap:28px">
+      <div>
+        <h2 class="sec-title">Cake4Kids Northern Virginia</h2>
+        <p class="sec-lede">Cake4Kids volunteers bake free, custom birthday cakes for children in foster care, shelters, and other hard circumstances. The Northern Virginia chapter has nearly 1,000 volunteer bakers and delivers about 300 cakes a month. In 2024, I volunteered as the lead contact for my county.</p>
+      </div>
+      <div class="comm">
+        <div class="comm-num"><span class="num">10,000</span><p>cakes delivered by the chapter, a milestone I helped bring to the press</p></div>
+        <ul class="comm-list">
+          <li>Planned the chapter's most successful fundraiser, an event at a local winery</li>
+          <li>Recruited and supported new agency partners in my county</li>
+          <li>Organized volunteer gatherings for local bakers</li>
+          <li>Led PR around the 10,000th cake, earning regional TV and news coverage</li>
+        </ul>
+      </div>
+      <div class="cakes" aria-label="Birthday cakes I baked for Cake4Kids">
+        <figure><img src="images/cake-roses.jpg" alt="Round birthday cake with orange and pink buttercream roses" width="700" height="700" loading="lazy"></figure>
+        <figure><img src="images/cake-bear.jpg" alt="Teddy bear cake with piped buttercream fur and a blue bow" width="700" height="700" loading="lazy"></figure>
+        <figure><img src="images/cake-soccer.jpg" alt="Soccer-themed birthday cake with a number 10 jersey and soccer ball panels" width="700" height="700" loading="lazy"></figure>
+        <figure><img src="images/cake-minecraft.jpg" alt="Green pixel-block video game themed birthday cake with a sword topper" width="700" height="700" loading="lazy"></figure>
+        <figure><img src="images/cake-doll.jpg" alt="Doll cake with a ruffled pink buttercream gown" width="700" height="700" loading="lazy"></figure>
+        <p class="fine">A few of the cakes I've baked for kids through Cake4Kids.</p>
+      </div>
+      <div class="press">
+        <a href="https://www.wusa9.com/article/life/people/the-heart-of-it/birthday-cake-changed-her-life-baking-for-kids-in-need/65-0c237369-865d-411a-b0e5-90d377b0e2cf" target="_blank" rel="noopener"><span class="outlet">WUSA9</span><span class="hl">Birthday cake changed her life: baking for kids in need</span><span class="when">TV ↗</span></a>
+        <a href="https://www.alxnow.com/2025/07/18/after-recent-10000th-cake-milestone-alexandria-area-cake4kids-continues-sweet-mission/" target="_blank" rel="noopener"><span class="outlet">ALXnow</span><span class="hl">After 10,000th cake milestone, Alexandria-area Cake4Kids continues sweet mission</span><span class="when">July 2025 ↗</span></a>
+        <a href="https://www.insidenova.com/news/cake4kids-of-northern-virginia-reaches-10-000th-cake-milestone-fc6c14a463b3/" target="_blank" rel="noopener"><span class="outlet">InsideNoVa</span><span class="hl">Cake4Kids of Northern Virginia reaches 10,000th cake milestone</span><span class="when">2025 ↗</span></a>
+        <a href="writing-cake4kids.html"><span class="outlet">Vienna Living</span><span class="hl">10,000 Cakes and Counting, an article I wrote for the magazine</span><span class="when">Read it →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="about">
+    <span class="label">About Jodi</span>
+    <div style="min-width:0">
+      <p class="statement">Jodi Esposito is Director of Digital Marketing at Reading Is Fundamental, where she leads digital strategy, content, search, and analytics across multiple web properties and the Skybrary reading app.</p>
+      <p style="font-size:19px;max-width:60ch;margin-top:28px">Her career spans more than 15 years with national associations and advocacy organizations, including the National Music Publishers' Association, the U.S. Chamber Institute for Legal Reform, and the Copyright Alliance, where she built marketing programs that grew audiences, membership, and search visibility. She pairs strategy with hands-on execution, from SEO and AI search to events, design, and earned media.</p>
+      <div class="about-cols">
+        <div><h3>Search &amp; content</h3><ul><li>SEO, AEO &amp; GEO</li><li>Content strategy &amp; editorial calendars</li><li>Email &amp; newsletters</li><li>Social media &amp; short-form video</li></ul></div>
+        <div><h3>Data &amp; tools</h3><ul><li>GA4, Tag Manager, Search Console</li><li>Semrush AI visibility</li><li>Salesforce CRM &amp; Marketing Cloud</li><li>Google Ad Grants</li><li>Adobe Creative Suite, Canva</li></ul></div>
+        <div><h3>Education</h3><ul><li>MBA, Ohio University</li><li>BA in Communications, concentration in Public Relations, George Mason University</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<div class="band gutter">
+  <p class="band-line"><span>Strategy people can see.</span><span>Results you can measure.</span></p>
+</div>
+
+<footer class="site-foot gutter" id="contact">
+  <div class="wrap">
+    <div class="rule"></div>
+    <span class="label">Get in touch</span>
+    <div class="contact-line">
+      <span class="email" id="email">jodi.esposito@gmail.com</span>
+      <button type="button" class="pill" id="copy-email">Copy email</button>
+    </div>
+    <span id="copy-status" aria-live="polite"></span>
+    <div class="contact-line">
+      <a class="pill" href="resume.html">Resume</a>
+      <a class="pill" href="https://www.linkedin.com/in/jodi-esposito-009168163/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <p style="font-size:14px;opacity:.75">© 2026 Jodi Esposito</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button'),cards=document.querySelectorAll('.card');
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    var f=b.dataset.f,first=new Map();
+    cards.forEach(function(c){if(!c.hidden){var r=c.getBoundingClientRect();first.set(c,r)}});
+    cards.forEach(function(c){c.hidden=!(f==='all'||c.dataset.tags.split(' ').indexOf(f)>-1)});
+    if(still||!cards[0].animate)return;
+    cards.forEach(function(c,i){
+      if(c.hidden)return;
+      var last=c.getBoundingClientRect(),prev=first.get(c);
+      if(prev){
+        var dx=prev.left-last.left,dy=prev.top-last.top;
+        if(dx||dy)c.animate([{transform:'translate('+dx+'px,'+dy+'px)'},{transform:'none'}],{duration:520,easing:'cubic-bezier(.2,.8,.2,1)'});
+      }else{
+        c.animate([{opacity:0,transform:'translateY(18px) scale(.97)'},{opacity:1,transform:'none'}],{duration:420,delay:60+i*30,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'});
+      }
+    });
+  })});
+  var tr=document.getElementById('c-track'),pv=document.getElementById('c-prev'),nx=document.getElementById('c-next'),ct=document.getElementById('c-count');
+  if(tr){
+    var sl=tr.querySelectorAll('.c-slide');
+    function idx(){var x=tr.scrollLeft,best=0,d=1e9;sl.forEach(function(e,i){var dd=Math.abs(e.offsetLeft-tr.offsetLeft-x);if(dd<d){d=dd;best=i}});return best}
+    function upd(){var i=idx();ct.textContent=(i+1)+' / '+sl.length;pv.disabled=tr.scrollLeft<4;nx.disabled=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-4}
+    function go(n){var i=Math.max(0,Math.min(sl.length-1,idx()+n));tr.scrollTo({left:sl[i].offsetLeft-tr.offsetLeft})}
+    pv.addEventListener('click',function(){go(-1)});nx.addEventListener('click',function(){go(1)});
+    tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+    var t;tr.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(upd,60)});upd();
+  }
+  var copy=document.getElementById('copy-email'),status=document.getElementById('copy-status');
+  copy.addEventListener('click',function(){
+    var t=document.getElementById('email').textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);status.textContent='Selected. Press Ctrl+C or ⌘C to copy.'}
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){status.textContent='Email copied.'},sel)}else{sel()}
+  });
+})();
+</script>
+
+</body>
+</html>

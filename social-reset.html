@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Social Media Reset Case Study · Jodi Esposito</title>
+<meta name="description" content="How a three-pillar strategy, data-built audience personas, and a six-month performance review grew Reading Is Fundamental's social views 150% and engagement 110% in one quarter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+.back{font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.back:hover{text-decoration:underline;text-underline-offset:5px}
+.cs-hero{display:grid;gap:22px;padding-block:40px 56px;max-width:1000px}
+.cs-hero h1{font-size:clamp(42px,6.4vw,84px);line-height:.98}
+.cs-hero .dek{font-size:clamp(19px,1.8vw,22px);max-width:58ch;color:var(--ink-soft)}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--lav-soft)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--rule)}
+.stats div{padding:24px 20px 8px 0;display:grid;gap:8px;align-content:start}
+.stats div+div{padding-left:20px;border-left:1px solid var(--rule-soft)}
+.stats .num{font-family:var(--display);font-size:clamp(42px,5vw,68px);line-height:.95;font-variant-numeric:tabular-nums}
+.stats p{font-size:15px;color:var(--ink-soft);max-width:24ch}
+.stats-note{font-size:13px;color:var(--ink-soft);margin:14px 0 88px;max-width:80ch}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div:nth-child(3){padding-left:0;border-left:0}.stats div:nth-child(n+3){border-top:1px solid var(--rule-soft)}}
+@media (max-width:480px){.stats{grid-template-columns:1fr}.stats div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule-soft)}}
+.prose{display:grid;gap:18px;max-width:64ch;font-size:18px}
+.prose h2{font-size:clamp(30px,3.6vw,42px);margin-bottom:4px}
+.step{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* Pillars: mix bar + three columns */
+.mix{display:grid;grid-template-columns:50fr 30fr 20fr;border-radius:4px;overflow:hidden;margin-top:6px}
+.mix span{padding:14px 16px;font-family:var(--display);font-size:clamp(22px,2.6vw,32px);line-height:1;color:#1F3A2B;white-space:nowrap}
+.mix .p1{background:var(--chart)}.mix .p2{background:var(--lav)}.mix .p3{background:#F2C3A6}
+.pillars{display:grid;grid-template-columns:50fr 30fr 20fr;gap:0}
+.pillars > div{padding:18px 18px 0 0;display:grid;gap:8px;align-content:start;min-width:0}
+.pillars > div+div{padding-left:18px;border-left:1px solid var(--rule-soft)}
+.pillars h3{font-size:24px;line-height:1.1}
+.pillars p{font-size:15px;color:var(--ink-soft)}
+.pillars dl{margin:4px 0 0;display:grid;gap:6px;font-size:14.5px}
+.pillars dt{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+.pillars dd{margin:0 0 6px}
+@media (max-width:760px){.mix,.pillars{grid-template-columns:1fr}.pillars > div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule-soft);margin-top:16px}}
+
+/* Personas */
+.personas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--rule)}
+.personas article{padding:20px 20px 22px 0;border-bottom:1px solid var(--rule-soft);display:grid;gap:6px;align-content:start;min-width:0}
+.personas article:not(:nth-child(3n+1)){padding-left:20px;border-left:1px solid var(--rule-soft)}
+.personas .plat{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
+.personas h3{font-size:24px;line-height:1.1}
+.personas .stat{font-family:var(--display);font-size:30px;line-height:1;margin-top:6px;font-variant-numeric:tabular-nums}
+.personas .stat small{display:block;font-family:var(--body);font-size:13px;color:var(--ink-soft);margin-top:4px}
+.personas p{font-size:15px}
+@media (max-width:900px){.personas{grid-template-columns:repeat(2,minmax(0,1fr))}.personas article:not(:nth-child(3n+1)){padding-left:0;border-left:0}.personas article:nth-child(even){padding-left:20px;border-left:1px solid var(--rule-soft)}}
+@media (max-width:560px){.personas{grid-template-columns:1fr}.personas article:nth-child(even){padding-left:0;border-left:0}}
+
+/* Keep / stop */
+.tbl-wrap{overflow-x:auto}
+table.ks{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+table.ks th{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--rule);color:var(--ink-soft)}
+table.ks td{padding:12px 16px 12px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+table.ks td:first-child{font-family:var(--display);font-size:19px;white-space:nowrap}
+.keep::before{content:"Keep";display:inline-block;font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:999px;background:var(--chart);color:#1F3A2B;margin-right:8px;vertical-align:2px}
+.stop::before{content:"Rework";display:inline-block;font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;border-radius:999px;border:1px solid var(--persimmon);color:var(--persimmon);margin-right:8px;vertical-align:2px}
+.changes{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.changes li{padding:14px 0;border-top:1px solid var(--rule-soft);font-size:17px}
+
+/* Before / after daily engagement */
+table.ba{width:100%;min-width:520px;border-collapse:collapse;font-size:15.5px;font-variant-numeric:tabular-nums}
+table.ba th{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;text-align:left;padding:0 16px 10px 0;border-bottom:1.5px solid var(--rule);color:var(--ink-soft)}
+table.ba th.r,table.ba td.r{text-align:right}
+table.ba td{padding:14px 16px 14px 0;border-bottom:1px solid var(--rule-soft);vertical-align:middle}
+table.ba td.name{font-family:var(--display);font-size:20px}
+.x{display:inline-block;font-family:var(--display);font-size:24px;line-height:1;padding:6px 12px;border-radius:999px;background:var(--chart);color:#1F3A2B}
+.x.big{background:var(--persimmon);color:#fff}
+.fine{font-size:13px;color:var(--ink-soft)}
+
+.wins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.wins figure{margin:0;display:grid;gap:12px;align-content:start}
+.wins img{width:100%;height:auto;border-radius:4px;border:1px solid var(--rule-soft)}
+.wins figcaption{display:grid;gap:4px}
+.wins figcaption b{font-family:var(--display);font-weight:400;font-size:22px;line-height:1.15}
+.wins figcaption span{font-size:15px;color:var(--ink-soft)}
+@media (max-width:820px){.wins{grid-template-columns:1fr}}
+.chan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px solid var(--rule)}
+.chan div{padding:20px 20px 6px 0;display:grid;gap:6px;align-content:start}
+.chan div+div{padding-left:20px;border-left:1px solid var(--rule-soft)}
+.chan .num{font-family:var(--display);font-size:clamp(34px,4vw,48px);line-height:1}
+.chan p{font-size:15px;color:var(--ink-soft)}
+@media (max-width:700px){.chan{grid-template-columns:1fr}.chan div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule-soft)}}
+.next{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;border-top:1.5px solid var(--rule);padding-block:28px 72px}
+.next a.title{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);text-decoration:none}
+.next a.title:hover{text-decoration:underline;text-underline-offset:5px}
+</style>
+</head>
+<body>
+<div class="gutter">
+<div class="wrap">
+
+  <header class="site-head">
+    <a class="mark" href="index.html">JODI ESPOSITO</a>
+    <nav aria-label="Sections">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a class="pill" href="index.html#contact">Get in touch</a>
+  </header>
+
+  <a class="back" href="index.html#work">← All case studies</a>
+
+  <section class="cs-hero">
+    <div class="tags"><span>Social strategy</span><span>Audience research</span><span>Analytics</span><span>Reading Is Fundamental</span><span>2026</span></div>
+    <h1>A data-led social media reset</h1>
+    <p class="dek">I built a three-pillar social strategy tied to business goals, created six audience personas from real platform data, and led a six-month performance review that rebuilt the content calendar. The next quarter grew on every headline number.</p>
+  </section>
+
+  <div class="stats" aria-label="Results, July to September 2026 vs. April to June">
+    <div><span class="num">3.2M</span><p>views and impressions across five channels, up 150%</p></div>
+    <div><span class="num">+110%</span><p>engagements, from 34.5K to 72.6K</p></div>
+    <div><span class="num">3.6×</span><p>new followers and subscribers, 4,262 in one quarter</p></div>
+    <div><span class="num">27×</span><p>daily TikTok engagement after the review</p></div>
+  </div>
+  <p class="stats-note">July to September 2026 compared with April to June. Facebook views include paid views in both quarters; Instagram follower growth includes a separate paid fundraising campaign.</p>
+
+  <section class="row">
+    <span class="label">The challenge</span>
+    <div class="prose">
+      <p>Reading Is Fundamental runs social channels for more than 180,000 followers across Facebook, Instagram, LinkedIn, TikTok, YouTube, X, and Pinterest, with a small team.</p>
+      <p>Posting was steady, but it wasn't a system. Content was planned for everyone at once, channels weren't tied to business goals, and some of the organization's most important asks, like fundraising and the Skybrary app, consistently underperformed. Leadership wanted social to support demand, conversion, and loyalty, and to show it.</p>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">Step 1 · Strategy</span>
+    <div style="min-width:0;display:grid;gap:24px">
+      <div class="prose">
+        <h2>A system, not a posting plan</h2>
+        <p>I built RIF's 2026 social strategy around three content pillars, each mapped to a business goal, an audience, and its own success metrics. A fixed monthly mix keeps the calendar from over-asking or under-nurturing.</p>
+      </div>
+      <div class="mix" aria-label="Monthly content mix: 50% generate demand, 30% convert, 20% loyalty">
+        <span class="p1">50%</span><span class="p2">30%</span><span class="p3">20%</span>
+      </div>
+      <div class="pillars">
+        <div>
+          <h3>Generate demand</h3>
+          <p>Shareable content that introduces RIF and makes the case for reading. Entertains, inspires, or interrupts.</p>
+          <dl><dt>Audience</dt><dd>New</dd><dt>Measured by</dt><dd>Reach, shares, follows</dd><dt>Cadence</dt><dd>8–10 posts a month</dd></dl>
+        </div>
+        <div>
+          <h3>Convert</h3>
+          <p>Clickable posts with one clear next step, limited to 2–3 priority actions a month.</p>
+          <dl><dt>Audience</dt><dd>New, ready to act</dd><dt>Measured by</dt><dd>Clicks, saves</dd><dt>Cadence</dt><dd>5–6 posts a month</dd></dl>
+        </div>
+        <div>
+          <h3>Loyalty</h3>
+          <p>Community stories and behind-the-scenes posts that build advocates.</p>
+          <dl><dt>Audience</dt><dd>Returning</dd><dt>Measured by</dt><dd>Comments, saves</dd><dt>Cadence</dt><dd>3–4 posts a month</dd></dl>
+        </div>
+      </div>
+      <div class="prose">
+        <p>Each platform got a recurring weekly series mapped to a pillar, so the team reuses a format instead of starting from a blank page every day. AI tools help with first drafts and repurposing; people review everything for RIF's voice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">Step 2 · Audiences</span>
+    <div style="min-width:0;display:grid;gap:24px">
+      <div class="prose">
+        <h2>Six platforms, six different audiences</h2>
+        <p>I built a persona for each platform from real data: platform analytics, follower bio analysis, and content performance through March 2026. Each one tells the team what that audience wants and how to speak to them.</p>
+      </div>
+      <div class="personas">
+        <article><span class="plat">Facebook</span><h3>The Community Mom</h3><p>Shares what helps her kids with every parent she knows. Acts on free, low-barrier offers.</p><span class="stat">4×<small>more clicks than reactions</small></span></article>
+        <article><span class="plat">Instagram</span><h3>The Literacy Champion</h3><p>A teacher or librarian who treats her feed as a resource library and saves tip carousels for later.</p><span class="stat">34%<small>share-to-like ratio</small></span></article>
+        <article><span class="plat">LinkedIn</span><h3>The Change Agent</h3><p>Funds, shapes, or runs education programs. Forwards impact data to his team.</p><span class="stat">9.25%<small>engagement rate</small></span></article>
+        <article><span class="plat">TikTok</span><h3>The BookTok Creator</h3><p>A school librarian with her own following. Prefers lo-fi, authentic video and could become an ambassador.</p><span class="stat">7.27%<small>engagement rate</small></span></article>
+        <article><span class="plat">X</span><h3>The Literacy Advocate</h3><p>A writer or educator who amplifies surprising stats and organizations doing real work.</p><span class="stat">18%<small>of the audience are writers and authors</small></span></article>
+        <article><span class="plat">Pinterest</span><h3>The Intentional Parent</h3><p>Searches with purpose and plans activities 30–45 days ahead. Finds RIF through the right keywords.</p><span class="stat">9.97×<small>childcare interest vs. the average user</small></span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">Step 3 · Review</span>
+    <div style="min-width:0;display:grid;gap:24px">
+      <div class="prose">
+        <h2>Six months of our own data</h2>
+        <p>On July 23, 2026, I led the social team through a review of six months of performance, post by post and platform by platform, sorted by pillar. We named what to keep doing and what to stop or rework.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="ks">
+          <thead><tr><th>Platform</th><th>What worked</th><th>What didn't</th></tr></thead>
+          <tbody>
+            <tr><td>Facebook</td><td class="keep">Nostalgia photos, reading tips, helpful book lists</td><td class="stop">Fundraising asks, app feature posts</td></tr>
+            <tr><td>Instagram</td><td class="keep">Saveable tip carousels, anniversary video</td><td class="stop">Product posts, corporate interviews</td></tr>
+            <tr><td>LinkedIn</td><td class="keep">Blog shares, event recaps, government affairs</td><td class="stop">Event promos, quote graphics</td></tr>
+            <tr><td>TikTok</td><td class="keep">Real people on camera, staff trends</td><td class="stop">Produced, polished video</td></tr>
+            <tr><td>YouTube</td><td class="keep">Short, single-concept teaching</td><td class="stop">Long-form generic uploads</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <p>The pattern was consistent. Content that was useful, authentic, or nostalgic won. Content that led with an ask lost. The team changed the calendar the same week:</p>
+        <ul class="changes">
+          <li>Moved Skybrary app posts to Skybrary's own channels, with occasional reshares to RIF</li>
+          <li>Shared more blogs on LinkedIn and launched The Joyful Reader newsletter</li>
+          <li>Posted more easy-to-save reading tips on Instagram</li>
+          <li>Started three recurring video series with RIF's literacy expert, in an every-other-week rotation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">The result</span>
+    <div style="min-width:0;display:grid;gap:28px">
+      <div class="prose">
+        <h2>Engagement doubled or better on every platform</h2>
+        <p>Average engagements per day, before and after the review.</p>
+      </div>
+      <div class="tbl-wrap">
+        <table class="ba">
+          <thead><tr><th>Platform</th><th class="r">July 1–22</th><th class="r">July 24–Sept 30</th><th class="r">Change</th></tr></thead>
+          <tbody>
+            <tr><td class="name">Facebook</td><td class="r">210</td><td class="r">482</td><td class="r"><span class="x">2.3×</span></td></tr>
+            <tr><td class="name">Instagram</td><td class="r">46</td><td class="r">90</td><td class="r"><span class="x">2.0×</span></td></tr>
+            <tr><td class="name">LinkedIn</td><td class="r">9</td><td class="r">16</td><td class="r"><span class="x">1.9×</span></td></tr>
+            <tr><td class="name">TikTok</td><td class="r">6</td><td class="r">168</td><td class="r"><span class="x big">27×</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Engagements per day from platform exports. The after period excludes August 25–27 on every platform, so one viral post doesn't inflate the result.</p>
+      <div class="chan">
+        <div><span class="num">+106%</span><p>Facebook organic views, while paid views fell by half. Reach was earned, not bought.</p></div>
+        <div><span class="num">3×</span><p>Instagram views, from 127K to 388K, led by shareable reading facts</p></div>
+        <div><span class="num">65%</span><p>of YouTube views came from videos published that quarter, up from 47%</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">Top posts</span>
+    <div style="min-width:0;display:grid;gap:24px">
+      <div class="prose"><h2>What the new calendar produced</h2></div>
+      <div class="wins">
+        <figure><img src="images/social-dolly.jpg" alt="Reading Is Fundamental Facebook tribute post to Dolly Parton, photo blurred" width="1000" height="938" loading="lazy"><figcaption><b>A tribute, posted in the moment</b><span>183K Facebook views, 9.5K reactions, 607 shares, and 422 new follows in three days. The #1 post on Facebook, Instagram, and LinkedIn.</span></figcaption></figure>
+        <figure><img src="images/social-instagram.jpg" alt="Instagram carousel: 7 Reasons Reading Is Good for You" width="1200" height="792" loading="lazy"><figcaption><b>Reading facts made to save</b><span>The "20 minutes a day" post drew 263 engagements and 70 shares, the kind of saveable content the Literacy Champion persona asks for.</span></figcaption></figure>
+        <figure><img src="images/social-linkedin.jpg" alt="LinkedIn post featuring a quote from RIF's VP of Literacy Programs" width="1000" height="944" loading="lazy"><figcaption><b>Experts as the content</b><span>Two RIF literacy specialists on why skills alone aren't enough: 62 reactions and 61 clicks. LinkedIn reach rose 30% on the same number of posts.</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <span class="label">My role</span>
+    <div class="prose">
+      <p>I wrote the 2026 social strategy, built the six audience personas, led the six-month review, and turned its findings into the new calendar. I also built the quarterly reporting that tracks results against each pillar's metrics.</p>
+      <h2 style="margin-top:16px">What it shows</h2>
+      <p>Social performs best when it runs as a system. Clear goals, a real picture of each audience, and a regular habit of checking the data let a small team grow faster than more posting ever would.</p>
+    </div>
+  </section>
+
+  <nav class="next" aria-label="More case studies">
+    <a class="back" href="index.html#work">← All case studies</a>
+    <span style="display:grid;gap:4px;text-align:right"><span class="label muted">Next case study</span><a class="title" href="ask-karly.html">Ask Karly &amp; Reading Fundamentals →</a></span>
+  </nav>
+
+</div>
+</div>
+
+<footer class="site-foot gutter">
+  <div class="wrap">
+    <div class="rule"></div>
+    <span class="label">Get in touch</span>
+    <p style="font-family:var(--display);font-size:clamp(24px,3.6vw,40px);user-select:all;word-break:break-all">jodi.esposito@gmail.com</p>
+    <p style="font-size:14px;opacity:.75">© 2026 Jodi Esposito</p>
+  </div>
+</footer>
+<script>if("scrollRestoration" in history){history.scrollRestoration="manual"}function toTop(){if(!location.hash){window.scrollTo(0,0)}}toTop();window.addEventListener("load",toTop);window.addEventListener("pageshow",toTop);</script>
+</body>
+</html>
